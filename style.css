@@ -62,3 +62,16 @@ span {
     align-items: center;
     font-size: 30px;
 }
+
+.new-game {
+    display: block;
+}
+
+.display-winner-block {
+    display: none;
+    font-size: 64px;
+    color: red;
+}
+.active {
+    display: block;
+}
