@@ -16,6 +16,7 @@ let roundNum
 let boxes = ""
 
 start()
+
 function start() {
     if (ageVerification < 21) {
         alert('Based on US laws, you are not aligable to gamble')
@@ -108,12 +109,12 @@ function checkLines() {
                 box2.style.background = "green"
                 box3.style.background = "green"
             },1000)
-            resetGame(box1, box2, box3)
+            nextRound(box1, box2, box3)
         }
     })
 }
 
-function resetGame(box1, box2, box3) {
+function nextRound(box1, box2, box3) {
     setTimeout(function() {
         box1.style.background = "transparent"
         box2.style.background = "transparent"
@@ -158,10 +159,10 @@ function displayWinner() {
     }
     newGame.style.display = "none"
     displayWinnerBlock.style.display = "block"
+    
+    restartGame.addEventListener('click', startNewGame)
 }
 
-restartGame.addEventListener('click', function() {
-    newGame.style.display = "none"
-    displayWinnerBlock.style.display = "none"
-    start()
-})
+function startNewGame(){
+    document.location.reload()
+}
